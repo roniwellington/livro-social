@@ -1,147 +1,7 @@
+{% extends 'livros/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livros</title>
-    <link rel="shortcut icon" href="assets/img/icone.png" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-        <link rel="stylesheet" href="{% static '/styles/header.css' %}">
-        <link rel="stylesheet" href="{% static '/styles/package.css' %}">
-        <link rel="stylesheet" href="{% static '/styles/popular.css' %}">
-        <link rel="stylesheet" href="{% static '/styles/footer.css' %}">
-        <link rel="stylesheet" href="{% static '/styles/querys.css' %}">
-        <link rel="stylesheet" href="{% static '/styles/style.css' %}">
-</head>
-
-<body id="top">
-
-    <!-- #header -->
-    <header class="header" data-header>
-
-        <div class="overlay" data-overlay></div>
-
-        <div class="header-top">
-            <div class="container">
-
-                <a href="#" class="helpline-box">
-
-                    <div class="icon-box">
-                        <ion-icon name="call-outline"></ion-icon>
-                    </div>
-
-                    <div class="wrapper">
-                        <p class="helpline-title">Para mais informações :</p>
-
-                        <p class="helpline-number">+55 (xx) xxxxx-xxxx</p>
-                    </div>
-
-                </a>
-
-                <a href="#" class="logo">
-                    <img src="{% static 'assets/logo/logo.png' %}" alt="livro social logo">
-                </a>
-
-                <div class="header-btn-group">
-
-                    <button class="search-btn" aria-label="Search">
-                        <ion-icon name="search"></ion-icon>
-                    </button>
-
-                    <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-                        <ion-icon name="menu-outline"></ion-icon>
-                    </button>
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="header-bottom">
-            <div class="container">
-
-                <ul class="social-list">
-
-                    <li>
-                        <a href="https://www.instagram.com/roniwellington/" target="_blank" class="social-link">
-                            <ion-icon name="logo-instagram"></ion-icon>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/roniwellington" target="_blank" class="social-link">
-                            <ion-icon name="logo-github"></ion-icon>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.linkedin.com/in/roniwellington/" target="_blank" class="social-link">
-                            <ion-icon name="logo-linkedin"></ion-icon>
-                        </a>
-                    </li>
-
-                </ul>
-
-                <nav class="navbar" data-navbar>
-
-                    <div class="navbar-top">
-
-                        <a href="#" class="logo">
-                            <img src="{% static 'assets/logo/logo-blue.png' %}" alt="livros social logo">
-                        </a>
-
-                        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
-                            <ion-icon name="close-outline"></ion-icon>
-                        </button>
-
-                    </div>
-
-                    <ul class="navbar-list">
-
-                        <li>
-                            <a href="#home" class="navbar-link" data-nav-link>home</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="navbar-link" data-nav-link>Sobre</a>
-                        </li>
-
-                        <li>
-                            <a href="#destination" class="navbar-link" data-nav-link>Livros</a>
-                        </li>
-
-                        <li>
-                            <a href="#package" class="navbar-link" data-nav-link>Preços</a>
-                        </li>
-
-                        <li>
-                            <a href="#gallery" class="navbar-link" data-nav-link>Galeria</a>
-                        </li>
-
-                        <li>
-                            <a href="#contact" class="navbar-link" data-nav-link>Contato</a>
-                        </li>
-
-                    </ul>
-
-                </nav>
-
-                <button class="btn btn-primary">Leia Agora</button>
-
-            </div>
-        </div>
-
-    </header>
-
-    <!-- PAREI  NO 04.ARQUIVOS ESTÁTICOS [ARQUIVOS ESTÁTICOS]-->
-
+{% block content %}
+ 
     <main>
         <article>
             <!-- 
@@ -226,11 +86,11 @@
                                     </div>
 
                                     <p class="card-subtitle">
-                                        <a href="livrosLidos.html">Ficção</a>
+                                        <a href="{% url 'livrosLidos' %}">Ficção</a>
                                     </p>
 
                                     <h3 class="h3 card-title">
-                                        <a href="#">O Guia dos Mochileiros</a>
+                                        <a href="{% url 'livrosLidos' %}">O Guia dos Mochileiros</a>
                                     </h3>
 
                                     <p class="card-text">
@@ -322,106 +182,7 @@
     </main>
 
 
-    <!-- 
-        - #FOOTER
-      -->
-
-    <footer class="footer">
-
-        <div class="footer-top">
-            <div class="container">
-
-                <div class="footer-brand">
-
-                    <a href="#" class="logo">
-                        <img src="{% static 'assets/logo/logo.png' %}" alt="Livro Social logo">
-                    </a>
-
-                    <p class="footer-text">
-                        Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium
-                        magna conubia
-                        at
-                        perferendis, pretium, aenean aut ultrices.
-                    </p>
-
-                </div>
-
-                <div class="footer-contact">
-
-                    <h4 class="contact-title">Contato</h4>
-
-                    <p class="contact-text">
-                        Sinta-se á vontade para entrar em contato!
-                    </p>
-
-                    <ul>
-
-                        <li class="contact-item">
-                            <ion-icon name="call-outline"></ion-icon>
-
-                            <a href="#" class="contact-link">+55 (xx) xxxxx-xxxx</a>
-                        </li>
-
-                        <li class="contact-item">
-                            <ion-icon name="mail-outline"></ion-icon>
-
-                            <a href="#" class="contact-link">livro.livro.com</a>
-                        </li>
-
-                        <li class="contact-item">
-                            <ion-icon name="location-outline"></ion-icon>
-
-                            <address>3146 esquina, Eta Carinae</address>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <div class="footer-form">
-
-                    <p class="form-text">
-                        Assine nossa newsletter para mais atualizações e notícias!!
-                    </p>
-
-                    <form action="" class="form-wrapper">
-                        <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
-
-                        <button type="submit" class="btn btn-secondary">inscreva-se</button>
-                    </form>
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="container">
-
-                <p class="copyright">
-                    &copy; 2025 <a href="">RoniWellington</a>. Todos os direitos reservados
-                </p>
-
-                <ul class="footer-bottom-list">
-
-                    <li>
-                        <a href="#" class="footer-bottom-link">política de Privacidade</a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="footer-bottom-link">Termos e Condições</a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="footer-bottom-link">Perguntas frequentes</a>
-                    </li>
-
-                </ul>
-
-            </div>
-        </div>
-
-    </footer>
+  
 
     <!-- 
         - #GO TO TOP
@@ -438,6 +199,4 @@
   -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
-
-</html>
+{% endblock %}
