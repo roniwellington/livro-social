@@ -23,7 +23,7 @@
 
 <body id="top">
 
-    <!-- #header -->
+     <!-- #header -->
     <header class="header" data-header>
 
         <div class="overlay" data-overlay></div>
@@ -140,10 +140,10 @@
 
     </header>
 
-    <!-- PAREI  NO 04.ARQUIVOS ESTÁTICOS [ARQUIVOS ESTÁTICOS]-->
 
     <main>
         <article>
+
             <!-- 
             - #TOUR SEARCH  css na página popular
           -->
@@ -186,6 +186,102 @@
                 </div>
             </section>
             <!-- 
+            - #PACKAGE
+          -->
+
+            <section class="package" id="package">
+                <div class="container">
+                                
+
+                    <p class="section-subtitle">Minhas Leituras</p>
+
+                    <ul class="package-list">
+
+                        <li>
+                            <div class="package-card">
+
+                                <figure class="card-banner">
+                                    <img src="{% static 'assets/imagens/galeria/guia dos mochileiros.png' %}" alt="Experience The Great Holiday On Beach"
+                                        loading="lazy">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <h3 class="h3 card-title">O Guia do Mochileiro das Galáxias</h3>
+
+                                    <p class="card-text">
+                                       O prefácio de "O Guia do Mochileiro das Galáxias" não é um prefácio tradicional, mas sim uma introdução humorística que estabelece o tom da obra. Ele começa com a destruição da Terra e a revelação de que Ford Prefect, amigo de Arthur Dent, é um alienígena. A partir daí, a história segue as desventuras de Arthur enquanto ele viaja pela galáxia, descobrindo a resposta para a "questão fundamental da vida, do universo e de tudo mais". 
+                                    </p>
+
+                                   
+                                    
+
+                                    <ul class="card-meta-list">
+
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="time"></ion-icon>
+
+                                                <p class="text">18:00</p>
+                                            </div>
+                                        </li>
+
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="people"></ion-icon>
+
+                                                <p class="text">Página: 10</p>
+                                            </div>
+                                        </li>
+
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="location"></ion-icon>
+
+                                                <p class="text">Brasil</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="card-price">
+
+                                    <div class="wrapper">
+
+                                        <p class="reviews">(25 reviews)</p>
+
+                                        <div class="card-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                    </div>
+
+                                    <p class="price">
+                                        R$ 75,00
+                                        <span>/ Site Amazon</span>
+                                    </p>
+
+                                    <button class="btn btn-secondary">Comprar Agora</button>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <button class="btn btn-primary">Ver mais informações</button>
+
+                </div>
+            </section>
+
+              <!-- 
             - #POPULAR
           -->
 
@@ -201,12 +297,6 @@
                     </p>
                         
                     <ul class="popular-list">
-                        <button class="btn btn-primary">Ficção Científica</button>
-                        <button class="btn btn-primary">Fantasia</button>
-                        <button class="btn btn-primary">Fantasia</button>
-                        <button class="btn btn-primary">Fantasia</button>
-                        <button class="btn btn-primary">Fantasia</button>
-                        <button class="btn btn-primary">Ciências</button>
 
                         <li>
                             <div class="popular-card">
@@ -317,6 +407,8 @@
 
                 </div>
             </section>
+
+
 
         </article>
     </main>
