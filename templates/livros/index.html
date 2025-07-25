@@ -68,11 +68,13 @@
                         <button class="btn btn-primary">Fantasia</button>
                         <button class="btn btn-primary">Ciências</button>
 
+                        {% if cards %}
+                        {% for livro in cards %}
                         <li>
                             <div class="popular-card">
 
                                 <figure class="card-img">
-                                    <img src="{% static 'assets/imagens/galeria/guia dos mochileiros.png' %}" alt="Livro Social" loading="lazy">
+                                    <img src="{% static 'assets/imagens/galeria/'%}{{ livro.imagem }}" alt="Livro Social" loading="lazy">
                                 </figure>
 
                                 <div class="card-content">
@@ -86,91 +88,26 @@
                                     </div>
 
                                     <p class="card-subtitle">
-                                        <a href="{% url 'livrosLidos' %}">Ficção</a>
+                                        <a href="{% url 'livrosLidos' livro.id %}">{{ livro.legenda }}</a>
                                     </p>
 
                                     <h3 class="h3 card-title">
-                                        <a href="{% url 'livrosLidos' %}">O Guia dos Mochileiros</a>
+                                        <a href="{% url 'livrosLidos' livro.id %}">{{ livro.nome }}</a>
                                     </h3>
 
                                     <p class="card-text">
-                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                                        {{ livro.descricao }}
                                     </p>
-
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="popular-card">
-
-                                <figure class="card-img">
-                                    <img src="{% static 'assets/imagens/galeria/guia dos mochileiros.png' %}" alt="Livro Social" loading="lazy">
-                                </figure>
-
-                                <div class="card-content">
-
-                                    <div class="card-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
                                     <p class="card-subtitle">
-                                        <a href="#">Ficção</a>
+                                        <a href="{% url 'livrosLidos' livro.id  %}">Mais informação</a>
                                     </p>
-
-                                    <h3 class="h3 card-title">
-                                        <a href="#">O Guia dos Mochileiros</a>
-                                    </h3>
-
-                                    <p class="card-text">
-                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                                    </p>
-
                                 </div>
 
                             </div>
                         </li>
-
-                        <li>
-                            <div class="popular-card">
-
-                                <figure class="card-img">
-                                    <img src="{% static 'assets/imagens/galeria/guia dos mochileiros.png' %}" alt="Livro Social" loading="lazy">
-                                </figure>
-
-                                <div class="card-content">
-
-                                    <div class="card-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <p class="card-subtitle">
-                                        <a href="#">Ficção</a>
-                                    </p>
-
-                                    <h3 class="h3 card-title">
-                                        <a href="#">O Guia dos Mochileiros</a>
-                                    </h3>
-
-                                    <p class="card-text">
-                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                                    </p>
-
-                                </div>
-
-                            </div>
-                        </li>
-
-
+                        {% endfor %}
+                        {% else %}
+                        {% endif %}
                     </ul>
 
                     <button class="btn btn-primary">Mais Livros</button>

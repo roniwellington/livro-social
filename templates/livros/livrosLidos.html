@@ -61,17 +61,15 @@
                             <div class="package-card">
 
                                 <figure class="card-banner">
-                                    <img src="{% static 'assets/imagens/galeria/guia dos mochileiros.png' %}" alt="Experience The Great Holiday On Beach"
+                                    <img src="{% static 'assets/imagens/galeria/'%}{{ livro.imagem}}" alt="Experience The Great Holiday On Beach"
                                         loading="lazy">
                                 </figure>
 
                                 <div class="card-content">
 
-                                    <h3 class="h3 card-title">O Guia do Mochileiro das Galáxias</h3>
+                                    <h3 class="h3 card-title">{{ livro.nome }}</h3>
 
-                                    <p class="card-text">
-                                       O prefácio de "O Guia do Mochileiro das Galáxias" não é um prefácio tradicional, mas sim uma introdução humorística que estabelece o tom da obra. Ele começa com a destruição da Terra e a revelação de que Ford Prefect, amigo de Arthur Dent, é um alienígena. A partir daí, a história segue as desventuras de Arthur enquanto ele viaja pela galáxia, descobrindo a resposta para a "questão fundamental da vida, do universo e de tudo mais". 
-                                    </p>
+                                    <p class="card-text">{{ livro.descricao }}</p>
 
                                    
                                     
@@ -162,7 +160,7 @@
                             <div class="popular-card">
 
                                 <figure class="card-img">
-                                    <img src="{% static 'assets/imagens/galeria/guia dos mochileiros.png' %}" alt="Livro Social" loading="lazy">
+                                    <img src="{% static 'assets/imagens/galeria/'%}{{ livro.imagem}}" alt="Livro Social" loading="lazy">
                                 </figure>
 
                                 <div class="card-content">
@@ -176,15 +174,15 @@
                                     </div>
 
                                     <p class="card-subtitle">
-                                        <a href="livrosLidos.html">Ficção</a>
+                                        <a href="#">{{ livro.legenda }}</a>
                                     </p>
 
                                     <h3 class="h3 card-title">
-                                        <a href="#">O Guia dos Mochileiros</a>
+                                        <a href="#">{{ livro.nome }}</a>
                                     </h3>
 
                                     <p class="card-text">
-                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                                        {{ livro.descricao }}
                                     </p>
 
                                 </div>

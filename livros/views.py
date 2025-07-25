@@ -1,11 +1,15 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from livros.models import Livro
+
+
 
 def index(request):
-    return render(request, 'livros/index.html')
+    livros = Livro.objects.all()
+    return render(request, 'livros/index.html', {"cards": livros})
 
-def livros_lidos(request):
-    return render(request, 'livros/livrosLidos.html')
+def livros_lidos(request, foto_id):
+    livro_Id = get_object_or_404(Livro, pk=foto_id)
+    return render(request, 'livros/livrosLidos.html', {"livro":livro_Id})
     
 
 # Create your views here.
