@@ -63,10 +63,10 @@
                     <ul class="popular-list">
                         <button class="btn btn-primary">Ficção Científica</button>
                         <button class="btn btn-primary">Fantasia</button>
-                        <button class="btn btn-primary">Fantasia</button>
-                        <button class="btn btn-primary">Fantasia</button>
-                        <button class="btn btn-primary">Fantasia</button>
+                        <button class="btn btn-primary">Biografia</button>
+                        <button class="btn btn-primary">Negócios e Economia</button>
                         <button class="btn btn-primary">Ciências</button>
+                        <button class="btn btn-primary">Outros</button>
 
                         {% if cards %}
                         {% for livro in cards %}
@@ -88,12 +88,16 @@
                                     </div>
 
                                     <p class="card-subtitle">
-                                        <a href="{% url 'livrosLidos' livro.id %}">{{ livro.legenda }}</a>
+                                        <a href="{% url 'livrosLidos' livro.id %}">Genero: {{ livro.categoria }}</a>
                                     </p>
 
                                     <h3 class="h3 card-title">
                                         <a href="{% url 'livrosLidos' livro.id %}">{{ livro.nome }}</a>
                                     </h3>
+
+                                    <p class="card-subtitle">
+                                        <a href="{% url 'livrosLidos' livro.id %}">Autor: {{ livro.legenda }}</a>
+                                    </p>
 
                                     <p class="card-text">
                                         {{ livro.descricao }}
