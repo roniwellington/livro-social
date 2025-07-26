@@ -59,10 +59,13 @@
 
                         <li>
                             <div class="package-card">
-
+                                {% if livro.imagem == "" or livro.imagem == null %}
                                 <figure class="card-banner">
-                                    <img src="{% static 'assets/imagens/galeria/'%}{{ livro.imagem}}" alt="Experience The Great Holiday On Beach"
+                                    <img src="{% static 'assets/imagens/galeria/no-image.png'%}" alt="Experience The Great Holiday On Beach"
                                         loading="lazy">
+                                {% else %}
+                                    <img src="{{ livro.imagem.url}}" alt="Livro Social" loading="lazy">
+                                {% endif %}
                                 </figure>
 
                                 <div class="card-content">
@@ -155,110 +158,14 @@
                     </p>
                         
                     <ul class="popular-list">
+                        <button class="btn btn-primary">Ficção Científica</button>
+                        <button class="btn btn-primary">Fantasia</button>
+                        <button class="btn btn-primary">Biografia</button>
+                        <button class="btn btn-primary">Negócios e Economia</button>
+                        <button class="btn btn-primary">Ciências</button>
+                        <button class="btn btn-primary">Outros</button>
 
-                        <li>
-                            <div class="popular-card">
-
-                                <figure class="card-img">
-                                    <img src="{% static 'assets/imagens/galeria/'%}{{ livro.imagem}}" alt="Livro Social" loading="lazy">
-                                </figure>
-
-                                <div class="card-content">
-
-                                    <div class="card-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <p class="card-subtitle">
-                                        <a href="#">{{ livro.legenda }}</a>
-                                    </p>
-
-                                    <h3 class="h3 card-title">
-                                        <a href="#">{{ livro.nome }}</a>
-                                    </h3>
-
-                                    <p class="card-text">
-                                        {{ livro.descricao }}
-                                    </p>
-
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="popular-card">
-
-                                <figure class="card-img">
-                                    <img src="{% static 'assets/imagens/galeria/guia dos mochileiros.png' %}" alt="Livro Social" loading="lazy">
-                                </figure>
-
-                                <div class="card-content">
-
-                                    <div class="card-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <p class="card-subtitle">
-                                        <a href="#">Ficção</a>
-                                    </p>
-
-                                    <h3 class="h3 card-title">
-                                        <a href="#">O Guia dos Mochileiros</a>
-                                    </h3>
-
-                                    <p class="card-text">
-                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                                    </p>
-
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="popular-card">
-
-                                <figure class="card-img">
-                                    <img src="{% static 'assets/imagens/galeria/guia dos mochileiros.png' %}" alt="Livro Social" loading="lazy">
-                                </figure>
-
-                                <div class="card-content">
-
-                                    <div class="card-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <p class="card-subtitle">
-                                        <a href="#">Ficção</a>
-                                    </p>
-
-                                    <h3 class="h3 card-title">
-                                        <a href="#">O Guia dos Mochileiros</a>
-                                    </h3>
-
-                                    <p class="card-text">
-                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                                    </p>
-
-                                </div>
-
-                            </div>
-                        </li>
-
-
+                       
                     </ul>
 
                     <button class="btn btn-primary">Mais Livros</button>

@@ -4,7 +4,7 @@ from livros.models import Livro
 
 
 def index(request):
-    livros = Livro.objects.all()
+    livros = Livro.objects.order_by("data_publicada").filter(publicada=True)
     return render(request, 'livros/index.html', {"cards": livros})
 
 def livros_lidos(request, foto_id):
