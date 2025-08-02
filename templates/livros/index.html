@@ -11,37 +11,31 @@
         <section class="tour-search tour-search-Top">
             <div class="container">
 
-                <form action="" class="tour-search-form">
-
+                <div action="" class="tour-search-form">
+                     
                     <div class="input-wrapper">
-                        <label for="destination" class="input-label">Pesquisar Destino</label>
-
-                        <input type="text" name="destination" id="destination" required placeholder="Enter Destination"
-                            class="input-field">
+                       <button class="btn btn-secondary">Ficção Científica</button>
+                    </div>
+                    <div class="input-wrapper">
+                       <button class="btn btn-secondary">Ficção Científica</button>
                     </div>
 
                     <div class="input-wrapper">
-                        <label for="people" class="input-label">Número de Livros</label>
-
-                        <input type="number" name="people" id="people" required placeholder="No.of People"
-                            class="input-field">
+                       <button class="btn btn-secondary">Fantasia</button>
                     </div>
 
                     <div class="input-wrapper">
-                        <label for="checkin" class="input-label">Inicio da Leitura</label>
-
-                        <input type="date" name="checkin" id="checkin" required class="input-field">
+                        <button class="btn btn-secondary">Biografia</button>
                     </div>
 
                     <div class="input-wrapper">
-                        <label for="checkout" class="input-label">Termino da Leitura</label>
-
-                        <input type="date" name="checkout" id="checkout" required class="input-field">
+                       <button class="btn btn-secondary">Negócios/Economia</button>
                     </div>
 
-                    <button type="submit" class="btn btn-secondary">Perguntar agora</button>
+                    <button type="submit" class="btn btn-secondary">Ciências</button>
+                    <button class="btn btn-secondary">Outros</button>
 
-                </form>
+                </div>
 
             </div>
         </section>
@@ -51,14 +45,7 @@
 
         <section class="popular" id="destination">
             <div class="container">
-                <!--input-->
-                <div class="input-wrapper">
-                    <label for="destination" class="input-label">Pesquisar Destino</label>
-                    <button type="submit" class="btn btn-primary">Perguntar agora</button>
-                    <input type="text" name="destination" id="destination" required placeholder="Enter Destination"
-                        class="input-field">
-
-                </div>
+               
                 <p class="section-subtitle">Descobrir Livros</p>
 
                 <h2 class="h2 section-title">Mais Populares</h2>
@@ -69,12 +56,7 @@
                 </p>
 
                 <ul class="popular-list">
-                    <button class="btn btn-primary">Ficção Científica</button>
-                    <button class="btn btn-primary">Fantasia</button>
-                    <button class="btn btn-primary">Biografia</button>
-                    <button class="btn btn-primary">Negócios e Economia</button>
-                    <button class="btn btn-primary">Ciências</button>
-                    <button class="btn btn-primary">Outros</button>
+                   
 
                     {% if cards %}
                     {% for livro in cards %}
