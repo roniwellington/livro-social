@@ -43,7 +43,7 @@
                                         Cadastre-se em nossa plataforma e confira nossos benefícios
                                     </p>
 
-                                    <form action="" method="" class="form-wrapper">
+                                    <form action="{% url 'cadastro' %}" method="POST" class="form-wrapper">
                                           {% csrf_token %}
                                             {% for field in form.visible_fields %}
                                             <label for="{{ field.id_for_label }}">{{field.label}}</label>
