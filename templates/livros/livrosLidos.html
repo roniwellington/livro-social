@@ -1,4 +1,4 @@
-{% extends 'livros/base.html' %}
+{% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
     <main>
@@ -17,7 +17,7 @@
                        <button class="btn btn-secondary">Ficção Científica</button>
                     </div>
                     <div class="input-wrapper">
-                       <button class="btn btn-secondary">Ficção Científica</button>
+                       <button class="btn btn-secondary">Aventura</button>
                     </div>
 
                     <div class="input-wrapper">
@@ -74,27 +74,29 @@
                                     <ul class="card-meta-list">
 
                                         <li class="card-meta-item">
-                                            <div class="meta-box">
-                                                <ion-icon name="time"></ion-icon>
-
-                                                <p class="text">18:00</p>
-                                            </div>
+                                                <a class="meta-box" href="{% url 'editar_livro' livro.id %}">
+                                                    <ion-icon name="pencil"></ion-icon>
+                                                    <p class="text">Editar</p>
+                                                </a>
                                         </li>
 
                                         <li class="card-meta-item">
                                             <div class="meta-box">
-                                                <ion-icon name="people"></ion-icon>
+                                                <ion-icon name="Book"></ion-icon>
 
                                                 <p class="text">Página: 10</p>
                                             </div>
                                         </li>
 
                                         <li class="card-meta-item">
-                                            <div class="meta-box">
-                                                <ion-icon name="location"></ion-icon>
+                                            
+                                                <a class="meta-box" href="{% url 'deletar_livro' %}">
+                                                    <ion-icon name="trash"></ion-icon>
+                                                    <p class="text">Deletar</p>
+                                                </a>
 
-                                                <p class="text">Brasil</p>
-                                            </div>
+                                                
+                                            
                                         </li>
 
                                     </ul>

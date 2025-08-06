@@ -43,7 +43,7 @@
                                         Cadastre-se em nossa plataforma e confira nossos benefícios
                                     </p>
 
-                                    <form action="{% url 'cadastro' %}" method="POST" class="form-wrapper">
+                                    <form action="{% url 'editar_livro' foto_id %}" method="POST"  enctype="multipart/form-data" class="form-wrapper">
                                           {% csrf_token %}
                                             {% for field in form.visible_fields %}
                                             <label for="{{ field.id_for_label }}">{{field.label}}</label>
@@ -57,7 +57,7 @@
 
 
 
-                                        <button type="submit" class="btn btn-primary">Criar sua conta</button>
+                                        <button type="submit" class="btn btn-primary">Editar Livro</button>
                                     </form>
 
                                 </div>
