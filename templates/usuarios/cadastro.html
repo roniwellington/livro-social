@@ -48,18 +48,13 @@
                                             {% for field in form.visible_fields %}
                                             <label for="{{ field.id_for_label }}">{{field.label}}</label>
                                             {{ field }}
+
+                                            {% for error in field.errors %}
+                                             <h4>{{error}}</h4>
+                                            {% endfor%}  
+
                                             {% endfor %}
-                                        <!-- <label for="nome_cadastro"><b>Nome completo</b></label>
-                                        <input type="text" name="nome_cadastro" class="input-field" placeholder="Ex: João Silva" required>
 
-                                        <label for="email"><b>email</b></label>
-                                        <input type="email" name="email" class="input-field" placeholder="Ex: joaosilva@xpto.com" required>
-
-                                        <label for="password1"><b>Senha</b></label>
-                                        <input type="password" name="password1" class="input-field" placeholder="Digite sua senha" required>
-
-                                        <label for="password2"><b>Confirme sua Senha</b></label>
-                                        <input type="password" name="password2" class="input-field" placeholder="Digite sua senha mais uma vez" required> -->
 
 
                                         <button type="submit" class="btn btn-primary">Criar sua conta</button>
@@ -74,12 +69,10 @@
                                 <div class="footer-form">
 
                                     <p class="form-text">
-                                        Se inscreva-se na nossa Plataforma
+                                      Já tem uma conta?
+                                      Então entre e cadastre seus livros
                                     </p>
-
-                                    <p class="form-text">
-                                        Se inscreva-se na nossa Plataforma
-                                    </p>
+                                     <button class="btn btn-secondary"><a href="{% url 'login' %}">Login</a></button>
 
 
                                 </div>
