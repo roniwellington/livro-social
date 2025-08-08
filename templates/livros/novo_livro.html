@@ -18,72 +18,31 @@
             - #PACKAGE
           -->
 
-        <section class="package" id="package">
+        <section class="popular" id="package">
             <div class="container">
+                <h2 class="h3 card-title">Adicionar novo Livro</h2>
+                <form action="{% url 'novo_livro' %}" method="POST" enctype="multipart/form-data"
+                    class="tour-search-form">
+                    <div class="input-wrapper">
+                        {% csrf_token %}
+                        {% for field in form.visible_fields %}
+                        <label for="{{ field.id_for_label }}">{{field.label}}</label>
+                        {{ field }}
+
+                        {% for error in field.errors %}
+                        <h4>{{error}}</h4>
+                        {% endfor%}
+
+                        {% endfor %}
 
 
-                <ul class="package-list">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
 
-
-                    <li>
-                        <div class="package-card">
-
-                            <figure class="card-banner">
-                                <img src="assets/img/popular-1.jpg" alt="Experience The Great Holiday On Beach"
-                                    loading="lazy">
-                            </figure>
-
-                            <div class="card-content">
-
-                                <h2 class="h3 card-title">Mundo do Livro</h2>
-
-                                <div class="footer-form">
-
-                                    <p class="form-text">
-                                        Cadastre-se em nossa plataforma e confira nossos benefícios
-                                    </p>
-
-                                    <form action="{% url 'novo_livro' %}" method="POST"  enctype="multipart/form-data" class="form-wrapper">
-                                          {% csrf_token %}
-                                            {% for field in form.visible_fields %}
-                                            <label for="{{ field.id_for_label }}">{{field.label}}</label>
-                                            {{ field }}
-
-                                            {% for error in field.errors %}
-                                             <h4>{{error}}</h4>
-                                            {% endfor%}  
-
-                                            {% endfor %}
-
-
-
-                                        <button type="submit" class="btn btn-primary">Cadastrar novo livro</button>
-                                    </form>
-
-                                </div>
-
-                            </div>
-
-                            <div class="card-price">
-
-                                <div class="footer-form">
-
-                                    <p class="form-text">
-                                      Já tem uma conta?
-                                      Então entre e cadastre seus livros
-                                    </p>
-                                     <button class="btn btn-secondary"><a href="{% url 'login' %}">Login</a></button>
-
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </li>
-
-                </ul>
             </div>
+
+          
         </section>
 
 
