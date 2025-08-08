@@ -43,7 +43,7 @@ def editar_livro(request, livro_id):
             #messages.SUCCESS(request, 'livro editado com sucesso')
             return redirect('index')
         
-    return render(request,'galeria/editar_livro.html', {'form':form, 'livro_id':livro_id})
+    return render(request,'livros/editar_livro.html', {'form':form, 'livro_id':livro_id})
 
 def deletar_livro(request):
     pass
