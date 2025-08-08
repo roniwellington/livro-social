@@ -45,5 +45,8 @@ def editar_livro(request, livro_id):
         
     return render(request,'livros/editar_livro.html', {'form':form, 'livro_id':livro_id})
 
-def deletar_livro(request):
-    pass
+def deletar_livro(request, livro_id):
+    livro = Livro.objects.get(id=livro_id)
+    livro.delete()
+    messages.success(request, 'Deleção feita com sucesso!')
+    return redirect('index')

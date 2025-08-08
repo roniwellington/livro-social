@@ -12,17 +12,17 @@ class LivroForms(forms.ModelForm):
         }
         
         widgets = {
-            'nome':forms.TextInput(attrs={'class':'form-control'}),
-            'legenda':forms.TextInput(attrs={'class':'form-control'}),
-            'categoria':forms.Select(attrs={'class':'form-control'}),
-            'descricao':forms.Textarea(attrs={'class':'form-control'}),
-            'imagem':forms.FileInput(attrs={'class':'form-control'}),
+            'nome':forms.TextInput(attrs={'class':'input-field'}),
+            'legenda':forms.TextInput(attrs={'class':'input-field'}),
+            'categoria':forms.Select(attrs={'class':'input-field'}),
+            'descricao':forms.Textarea(attrs={'class':'input-field'}),
+            'imagem':forms.FileInput(attrs={'class':'input-field'}),
             'data_publicada':forms.DateInput(
                 format= '%d/%m/%Y',
                 attrs={
                     'type':'date',
-                    'class':'form-control'}
+                    'class':'input-field'}
                 ),
-            'usuario':forms.Select(attrs={'class':'form-control'}),
+            'usuario':forms.Select(attrs={'class':'input-field'}),
         }
         
