@@ -50,3 +50,7 @@ def deletar_livro(request, livro_id):
     livro.delete()
     messages.success(request, 'Deleção feita com sucesso!')
     return redirect('index')
+
+def filtro(request, categoria):
+     livros = Livro.objects.order_by("data_publicada").filter(publicada=True, categoria=categoria)
+     return render(request, 'livros/index.html',{"cards":livros})

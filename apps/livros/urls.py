@@ -1,5 +1,5 @@
 from django.urls import path
-from apps.livros.views import index,livros_lidos, novo_livro, editar_livro, deletar_livro
+from apps.livros.views import index,livros_lidos, novo_livro, editar_livro, deletar_livro, filtro
 
 urlpatterns = [
     path('', index,name='index'),
@@ -7,4 +7,5 @@ urlpatterns = [
     path('novo-livro', novo_livro, name='novo_livro'),
     path('editar-livro/<int:livro_id>', editar_livro, name='editar_livro'),
     path('deletar-livro/<int:livro_id>', deletar_livro, name='deletar_livro'),
+    path('filtro/<str:categoria>', filtro, name='filtro'),
 ]

@@ -1,181 +1,188 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <main>
-        <article>
+<main>
+    <article>
 
-            <!-- 
+        <!-- 
             - #TOUR SEARCH  css na página popular
           -->
 
-            <section class="tour-search tour-search-Top">
+        <section class="tour-search tour-search-Top">
             <div class="container">
 
                 <div action="" class="tour-search-form">
-                     
+
                     <div class="input-wrapper">
-                       <button class="btn btn-secondary">Ficção Científica</button>
+                        <a href="{% url 'filtro' 'FICÇÃO CIENTÍFICA' %}" class="btn btn-secondary">Ficção Científica</a>
                     </div>
                     <div class="input-wrapper">
-                       <button class="btn btn-secondary">Aventura</button>
+                        <a href="{% url 'filtro' 'AVENTURA' %}" class="btn btn-secondary">Aventura</a>
                     </div>
 
                     <div class="input-wrapper">
-                       <button class="btn btn-secondary">Fantasia</button>
+                        <a href="{% url 'filtro' 'FANTASIA' %}" class="btn btn-secondary">Fantasia</a>
                     </div>
 
                     <div class="input-wrapper">
-                        <button class="btn btn-secondary">Biografia</button>
+                        <a href="{% url 'filtro' 'BIOGRAFIA' %}" class="btn btn-secondary">Biografia</a>
                     </div>
 
                     <div class="input-wrapper">
-                       <button class="btn btn-secondary">Negócios/Economia</button>
+                        <a href="{% url 'filtro' 'NEGÓCIOS E ECONÔMIA' %}"
+                            class="btn btn-secondary">Negócios/Economia</a>
+                    </div>
+                    <div class="input-wrapper">
+                        <a href="{% url 'filtro' 'CIÊNCIAS' %}" class="btn btn-secondary">Ciências</a>
+                    </div>
+                    <div class="input-wrapper">
+                        <a href="{% url 'filtro' 'OUTROS' %}" class="btn btn-secondary">Outros</a>
                     </div>
 
-                    <button type="submit" class="btn btn-secondary">Ciências</button>
-                    <button class="btn btn-secondary">Outros</button>
+
 
                 </div>
 
             </div>
         </section>
-            <!-- 
+        <!-- 
             - #PACKAGE
           -->
 
-            <section class="package" id="package">
-                <div class="container">
-                                
+        <section class="package" id="package">
+            <div class="container">
 
-                    <p class="section-subtitle">Minhas Leituras</p>
 
-                    <ul class="package-list">
+                <p class="section-subtitle">Minhas Leituras</p>
 
-                        <li>
-                            <div class="package-card">
-                                {% if livro.imagem == "" or livro.imagem == null %}
-                                <figure class="card-banner">
-                                    <img src="{% static 'assets/imagens/galeria/no-image.png'%}" alt="Experience The Great Holiday On Beach"
-                                        loading="lazy">
+                <ul class="package-list">
+
+                    <li>
+                        <div class="package-card">
+                            {% if livro.imagem == "" or livro.imagem == null %}
+                            <figure class="card-banner">
+                                <img src="{% static 'assets/imagens/galeria/no-image.png'%}"
+                                    alt="Experience The Great Holiday On Beach" loading="lazy">
                                 {% else %}
-                                    <img src="{{ livro.imagem.url}}" alt="Livro Social" loading="lazy">
+                                <img src="{{ livro.imagem.url}}" alt="Livro Social" loading="lazy">
                                 {% endif %}
-                                </figure>
+                            </figure>
 
-                                <div class="card-content">
+                            <div class="card-content">
 
-                                    <h3 class="h3 card-title">{{ livro.nome }}</h3>
+                                <h3 class="h3 card-title">{{ livro.nome }}</h3>
 
-                                    <p class="card-text">{{ livro.descricao }}</p>
+                                <p class="card-text">{{ livro.descricao }}</p>
 
-                                   
-                                    
 
-                                    <ul class="card-meta-list">
 
-                                        <li class="card-meta-item">
-                                                <a class="meta-box" href="{% url 'editar_livro' livro.id %}">
-                                                    <ion-icon name="pencil"></ion-icon>
-                                                    <p class="text">Editar</p>
-                                                </a>
-                                        </li>
 
-                                        <li class="card-meta-item">
-                                            <div class="meta-box">
-                                                <ion-icon name="Book"></ion-icon>
+                                <ul class="card-meta-list">
 
-                                                <p class="text">Página: 10</p>
-                                            </div>
-                                        </li>
+                                    <li class="card-meta-item">
+                                        <a class="meta-box" href="{% url 'editar_livro' livro.id %}">
+                                            <ion-icon name="pencil"></ion-icon>
+                                            <p class="text">Editar</p>
+                                        </a>
+                                    </li>
 
-                                        <li class="card-meta-item">
-                                            
-                                                <a class="meta-box" href="{% url 'deletar_livro' livro.id %}">
-                                                    <ion-icon name="trash"></ion-icon>
-                                                    <p class="text">Deletar</p>
-                                                </a>
+                                    <li class="card-meta-item">
+                                        <div class="meta-box">
+                                            <ion-icon name="Book"></ion-icon>
 
-                                                
-                                            
-                                        </li>
-
-                                    </ul>
-
-                                </div>
-
-                                <div class="card-price">
-
-                                    <div class="wrapper">
-
-                                        <p class="reviews">(25 reviews)</p>
-
-                                        <div class="card-rating">
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
+                                            <p class="text">Página: 10</p>
                                         </div>
+                                    </li>
 
-                                    </div>
+                                    <li class="card-meta-item">
 
-                                    <p class="price">
-                                        R$ 75,00
-                                        <span>/ Site Amazon</span>
-                                    </p>
+                                        <a class="meta-box" href="{% url 'deletar_livro' livro.id %}">
+                                            <ion-icon name="trash"></ion-icon>
+                                            <p class="text">Deletar</p>
+                                        </a>
 
-                                    <button class="btn btn-secondary">Comprar Agora</button>
 
-                                </div>
+
+                                    </li>
+
+                                </ul>
 
                             </div>
-                        </li>
 
-                    </ul>
+                            <div class="card-price">
 
-                    <button class="btn btn-primary">Ver mais informações</button>
+                                <div class="wrapper">
 
-                </div>
-            </section>
+                                    <p class="reviews">(25 reviews)</p>
 
-              <!-- 
+                                    <div class="card-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                    </div>
+
+                                </div>
+
+                                <p class="price">
+                                    R$ 75,00
+                                    <span>/ Site Amazon</span>
+                                </p>
+
+                                <button class="btn btn-secondary">Comprar Agora</button>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+                <button class="btn btn-primary">Ver mais informações</button>
+
+            </div>
+        </section>
+
+        <!-- 
             - #POPULAR
           -->
 
-            <section class="popular" id="destination">
-                <div class="container">
+        <section class="popular" id="destination">
+            <div class="container">
 
-                    <p class="section-subtitle">Descobrir Livros</p>
+                <p class="section-subtitle">Descobrir Livros</p>
 
-                    <h2 class="h2 section-title">Mais Populares</h2>
+                <h2 class="h2 section-title">Mais Populares</h2>
 
-                    <p class="section-text">
-                        Descubra os livros mais amados na nossa comunidade! Mergulhe nas histórias que estão conquistando corações e mentes agora mesmo.
-                    </p>
+                <p class="section-text">
+                    Descubra os livros mais amados na nossa comunidade! Mergulhe nas histórias que estão conquistando
+                    corações e mentes agora mesmo.
+                </p>
 
-                    <button class="btn btn-primary">Mais Livros</button>
+                <button class="btn btn-primary">Mais Livros</button>
 
-                </div>
-            </section>
+            </div>
+        </section>
 
 
 
-        </article>
-    </main>
+    </article>
+</main>
 
-    <!-- 
+<!-- 
         - #GO TO TOP
       -->
 
-    <a href="#top" class="go-top" data-go-top>
-        <ion-icon name="chevron-up-outline"></ion-icon>
-    </a>
+<a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+</a>
 
 
-    <script src="assets/js/script.js"></script>
-    <!-- 
+<script src="assets/js/script.js"></script>
+<!-- 
     - ionicon link
   -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 {% endblock %}

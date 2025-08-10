@@ -14,28 +14,28 @@
                 <div action="" class="tour-search-form">
                      
                     <div class="input-wrapper">
-                       <button class="btn btn-secondary">Ficção Científica</button>
+                       <a href="{% url 'filtro' 'FICÇÃO CIENTÍFICA' %}" class="btn btn-secondary">Ficção Científica</a>
                     </div>
                     <div class="input-wrapper">
-                       <button class="btn btn-secondary">Aventura</button>
-                    </div>
-
-                    <div class="input-wrapper">
-                       <button class="btn btn-secondary">Fantasia</button>
+                       <a href="{% url 'filtro' 'AVENTURA' %}" class="btn btn-secondary">Aventura</a>
                     </div>
 
                     <div class="input-wrapper">
-                        <button class="btn btn-secondary">Biografia</button>
+                       <a href="{% url 'filtro' 'FANTASIA' %}" class="btn btn-secondary">Fantasia</a>
                     </div>
 
                     <div class="input-wrapper">
-                       <button class="btn btn-secondary">Negócios/Economia</button>
+                        <a href="{% url 'filtro' 'BIOGRAFIA' %}" class="btn btn-secondary">Biografia</a>
+                    </div>
+
+                    <div class="input-wrapper">
+                       <a href="{% url 'filtro' 'NEGÓCIOS E ECONÔMIA' %}" class="btn btn-secondary">Negócios/Economia</a>
                     </div>
                     <div class="input-wrapper">
-                       <button type="submit" class="btn btn-secondary">Ciências</button>
+                       <a href="{% url 'filtro' 'CIÊNCIAS' %}" class="btn btn-secondary">Ciências</a>
                     </div>
                     <div class="input-wrapper">
-                       <button class="btn btn-secondary">Outros</button>
+                       <a href="{% url 'filtro' 'OUTROS' %}" class="btn btn-secondary">Outros</a>
                     </div>
                     
                     
