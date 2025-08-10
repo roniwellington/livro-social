@@ -1,14 +1,7 @@
 
 
-.container {
-    padding: 0 2rem;
-}
-.main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex-grow: 1;
-}
+
+
 
 .chat {
     display: flex;
@@ -54,7 +47,8 @@
     top: 0;
     right: calc(-2.5rem - 1rem);
 
-    background-image: url(../img/icone-chatbot.svg);
+    background-image: url(../assets/ícones/icone-chatbot.svg); 
+    /* background-image: url(../ícones/icone-chatbot.svg); */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -74,8 +68,8 @@
     position: absolute;
     top: 0;
     left: calc(-2.5rem - 1rem);
-
-    background-image: url(../img/icone-perfil.svg);
+    background-image: url(../assets/ícones/icone-perfil.svg);
+    /* background-image: url(../assets/ícones/icone-perfil.svg); */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -151,13 +145,16 @@
 }
 
 .icone--enviar-audio {
-    background-image: url(../img/icone-audio.svg);
+    background-image: url(../assets/ícones/icone-audio.svg);
+    /* background-image: url(../assets/ícones/icone-audio.svg); */
 }
 
 .icone--mais-opcoes {
-    background-image: url(../img/icone-mais.svg);
+    background-image: url(../assets/ícones/icone-mais.svg);
+    /* background-image: url(../ícones/icone-mais.svg); */
 }
 
 .icone--enviar-mensagem {
-    background-image: url(../img/icone-enviar.svg);
+    background-image: url(../assets/ícones/icone-enviar.svg);
+    /* background-image: url(../ícones/icone-enviar.svg); */
 }
